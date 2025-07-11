@@ -1,33 +1,41 @@
-#include<stdio.h>
+/*  input :-5
+   output:-
 
-void DisplayFactorsNonFactors(int iNo)
+    A  B  C  D  E
+    
+ */
+import java.util.*;
+
+class Alphabet
 {
-    int iCnt = 0;
+    public void Display(  int iNo  )
+ {   
+      int iCnt = 0;
+      char ch = 'A';
+     
 
-    if(iNo < 0)     // Updator
-    {   iNo = -iNo; }
-
-    for(iCnt = 1; iCnt < iNo ; iCnt++)
+    for(iCnt = 0; iCnt <  iNo &&  ch <= 'Z'; iCnt++, ch++)
     {
-        if((iNo % iCnt) == 0)
-        {
-            printf("Factor is %d\n",iCnt);
-        }
-        else
-        {
-            printf("Non Factor is %d\n",iCnt);
-        }
+        System.out.print(ch + "\t");
     }
+    System.out.println();
+ }
+
 }
 
-int main()
+class program51
 {
-    int iValue = 0;
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue = 0;
 
-    printf("Enter number : \n");
-    scanf("%d",&iValue);
+     System.out.println("Enter number :");
+     iValue = sobj.nextInt();
 
-    DisplayFactorsNonFactors(iValue);
+     Alphabet pobj = new Alphabet();
 
-    return 0;
+     pobj.Display(iValue);
+
+    }
 }
