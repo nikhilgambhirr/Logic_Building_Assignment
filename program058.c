@@ -1,49 +1,50 @@
-#include<stdio.h>
+/*  input :- iRow : 3    icol : 5
 
-int Summation(int ptr[],int iSize)    // address of integers  ahe
+   output:- 5  4  3  2  1
+   output:- 5  4  3  2  1
+   output:- 5  4  3  2  1
+            
+            
+    
+ */
+ import java.util.*;
+
+ class Layout
 {
-    
-
-    int iCnt =0;
-    int iSum = 0;
-    
-
-    for(iCnt = 0; iCnt < iSize; iCnt++) // for loop takala ahe hyat
-    {
-       iSum= iSum + ptr[iCnt];
+    public void Display( int iRow,int iCol)
+  {
+        int i = 0, j = 0;
         
-    }
 
-    return iSum;
-    
-    
-    
+        for(i = 1; i <= iRow; i++)    // row ch logic
+        {
+            for(j = iCol; j >= 1; j--)  // coloum ch logic    
+            {
+                System.out.print(j+"\t");  // colum user input deil tas vadat rahil
+            }
+            System.out.println();
+        }
+
+  }
 
 }
 
-int main()
+ class program58
 {
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue1 = 0, iValue2 = 0;
 
-    int Arr[5];
-    int iCnt = 0, iRet = 0;
+     System.out.println("Enter the Rows  :");
+     iValue1 = sobj.nextInt();
 
-     printf("Enter the elements : \n");
-     for (iCnt = 0; iCnt < 5; iCnt++)
-     {
-       scanf("%d",&Arr[iCnt]);    
-     }    
-     
-     iRet = Summation(Arr,5); 
+     System.out.println("Enter the Coloum  :");
+     iValue2 = sobj.nextInt();
 
-     printf("Addition is : %d\n",iRet);
+     Layout pobj = new Layout();
 
-     
-    
-     
+     pobj.Display(iValue1,iValue2);
 
-
-    return 0;
-
-    
-
+    }
 }
