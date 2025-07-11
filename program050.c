@@ -1,29 +1,42 @@
 #include<stdio.h>
 
-void DisplayFactors(int iNo)
+int CountDiff(int iNo)
 {
-    int iCnt = 0;
+    int iDigit = 0;
+    int evenSum = 0, oddSum = 0;
+    
+      if( iNo < 0)   //updeter
+      {
+        iNo = -iNo;
+      }
+     while (iNo != 0)
+     {
+         iDigit = iNo % 10;
 
-    if(iNo < 0)     // Updator
-    {   iNo = -iNo; }
-
-    for(iCnt = 1; iCnt <= (iNo/2) ; iCnt++)
-    {
-        if((iNo % iCnt) == 0)
-        {
-            printf("%d\n",iCnt);
-        }
-    }
+         if(iDigit % 2 ==0)
+         {
+         evenSum += iDigit;
+         }
+         else
+         {
+            oddSum += iDigit;
+         }
+          iNo = iNo / 10;
+     }
+     
+     return evenSum - oddSum;
 }
-
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter number : \n");
+    printf("Enter number:\n");
     scanf("%d",&iValue);
 
-    DisplayFactors(iValue);
+    iRet = CountDiff(iValue);
+
+    printf("%d\n",iRet);
 
     return 0;
-}
+ }
