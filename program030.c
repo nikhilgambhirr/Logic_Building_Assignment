@@ -1,29 +1,24 @@
 #include<stdio.h>
-
-int CountDigits(int iNo)
+void TableRev(int iNo)
 {
     int iCnt = 0;
-    int iDigits = 0;
 
-    while(iNo != 0)
+    for(iCnt = 10; iCnt>= 1; iCnt--)  // resever ahe
     {
-        iDigits = iNo % 10;
-        iNo = iNo / 10;
-        iCnt++;
+         printf("%d\t", -iNo * iCnt);
     }
-    return iCnt;
+
 }
 
 int main()
 {
-    int iValue = 0, iRet = 0;
+    int iValue = 0;
 
-    printf("Enter number : \n");
+    printf("Enter number:");
     scanf("%d",&iValue);
 
-    iRet = CountDigits(iValue);
-
-    printf("Number of digits are : %d\n",iRet);
+    TableRev(iValue);
 
     return 0;
+    
 }
