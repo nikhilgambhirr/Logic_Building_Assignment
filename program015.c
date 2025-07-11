@@ -1,23 +1,55 @@
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 10/05/2025
+//
+////////////////////////////////////////////
 #include<stdio.h>
+ 
 
-void Display()
+#define TRUE 1
+#define FALSE 0
+
+typedef int BOOL;
+
+BOOL ChkVowel(char ch)
 {
-    int i = 0, j = 0;
-
-    for(i = 1; i<= 3; i++)
-    {
-        for(j = 1; j <= 3; j++)
-        {
-            printf("*\t");
-        }
-        printf("\n");
-    }
+    if(ch >= 'A' && ch <= 'Z')
+{
+        ch = ch +32;
 }
 
-int main()
+if(ch == 'a'|| ch  == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
 {
-
-    Display();
-
-    return 0;
+    return TRUE;
 }
+else
+{
+   return FALSE;
+}
+}
+  int main()
+  {
+
+     char cValue = '\0';
+     BOOL bRet = FALSE;
+
+     printf("Enter character\n");
+     scanf("%c", &cValue);
+
+     bRet = ChkVowel(cValue);
+
+     if (bRet == TRUE)
+     {
+        printf("it is vowel\n");
+     } 
+     else
+     {
+        printf("it is not vowel\n");
+     }
+
+     return 0;
+     
+  }
