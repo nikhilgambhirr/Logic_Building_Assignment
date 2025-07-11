@@ -1,42 +1,40 @@
-#include<stdio.h>
+/*  input :-8
+   output:-  2  4  6  8   10    12    14   16
 
-void Display(int *ptr,int iSzie)    // address of integers  ahe
+      
+    
+ */
+ import java.util.*;
+
+ class Pattern
 {
-    printf("Element of the array are :\n");
-    
-    printf("%d\n",ptr[0]);
-     
-    printf("%d\n",ptr[1]);
-    
-    printf("%d\n",ptr[2]);
-    
-    printf("%d\n",ptr[3]);
-    
-    printf("%d\n",ptr[4]);
-    
-    
+    public void Display( int iNo)
+ {
+     int iCnt = 0;
+     int multi = 0;
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    {
+       System.out.println(iCnt *2 );
+    }
+    System.out.println();
+ }
 
 }
 
-int main()
+ class program55
 {
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue = 0;
 
-    int Arr[5];
-    int iCnt = 0;
+     System.out.println("Enter number :");
+     iValue = sobj.nextInt();
 
-     printf("Enter the elements : \n");
-     for (iCnt = 0; iCnt < 5; iCnt++)
-     {
-       scanf("%d",&Arr[iCnt]);    
-     }                          
+     Pattern pobj = new Pattern();
 
-     
-   Display(Arr,5); // display (100,5);
-     
+     pobj.Display(iValue);
 
-
-    return 0;
-
-    
-
+    }
 }
