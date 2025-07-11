@@ -1,56 +1,59 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-int Minimum(int Arr[], int iSize)
-{
-    int iCnt = 0, iMin = 0;
-
-    if((Arr == NULL) || (iSize <= 0))
-    {
-        printf("Invalid input\n");
-        return -1;
-    }
-
-    iMin = Arr[0];
+// input 4 4
+/*
     
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] < iMin)
-        {
-            iMin = Arr[iCnt];
-        }
-    }
+    *  * * * *  
+    *  @ @ @ *
+    *  @ @ @ *
+    *  @ @ @ *
+    *  @ @ @ *
+    *  * * * *   
+   
+ */
+import java.util.*;
 
-    return iMin;
-}
-
-int main()
+class Layout
 {
-    int *iPtr = NULL;
-    int iLength = 0, iCnt = 0, iRet = 0;
+    public void Display(int iRow,int iCol)
+  {
+       int i = 0, j = 0;
 
-    printf("Enter number of elements : \n");
-    scanf("%d",&iLength);
-
-    iPtr = (int *)malloc(iLength * sizeof(int));
-    if(NULL == iPtr)
-    {
-        printf("Unable to allocate the memory\n");
-        return -1;
+      for(i = 1; i <= iRow; i++)
+       {
+           for(j =1; j <= iCol; j++)
+           {
+             if((j == 1) || (j == iCol) || (i == 1) || (i == iRow))
+             {
+                System.out.print("*\t");
+            
+             }
+             else
+             {
+                System.out.print("@\t");
+             }
+               
+           }
+       System.out.println("\n");
     }
-
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        printf("\nEnter the number %d : ",iCnt+1);
-        scanf("%d",&iPtr[iCnt]);
-    }
-
-    iRet = Minimum(iPtr, iLength);
-
-    printf("Minimum element is : %d\n",iRet);
-
-    free(iPtr);
-
-    return 0;
+  }   
 }
+class program74
+ {
+     public static void main(String A[])
+{
+    Scanner sobj = new Scanner(System.in);
+    int iValue1 = 0, iValue2 = 0;
+
+    System.out.println("Enter number of rows :");
+    iValue1 = sobj.nextInt();
+
+    System.out.println("Enter number of colum :"); 
+    iValue2 = sobj.nextInt();
+
+    Layout pobj = new Layout();
+
+    pobj.Display(iValue1,iValue2);
+
+}
+        
+}
+   
