@@ -1,37 +1,46 @@
-// Input : 4
-// Output : 1   2   3   4
-
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 8/05/2025
+//
+/////////////////////////////////////////////
 #include<stdio.h>
 
-void Display(int iNo)
-{
-   int iCnt = 0;
+typedef int BOOL;
+#define TRUE 1
+#define FALSE 0
 
-     if( iNo < 0)                // error
-   {
-     iNo = -iNo;
-   }
-   
-   for( iCnt =iNo; iCnt >=1; iCnt++)
-   {
-    printf("%d\t",iCnt);
-   }
-     printf("\n");
+BOOL check(int iNo1)
+{
+      if(iNo1 % 5== 0)
+      {
+        return TRUE;
+      }
+      else
+      {
+      return FALSE;
+      }
 }
+ int main()
+ {
+    int iValue = 0;
+   BOOL bRet = FALSE;
 
-int main()
-{
+   printf("Enter number: \n");
+   scanf("%d",&iValue);
 
-  int iValue = 0;
+   bRet = check(iValue);
 
-  printf("Enter the Frequency : \n");
-  scanf("%d",&iValue);
+   if(bRet ==  TRUE)
+   {
+      printf("Divisible by 5\n");
 
-  Display(iValue);
-
-    return 0;
-
-
-} // time complexity O(n)
-// N is  a natural number
-// Where N>= 0 and N<= Inifinty
+   }
+   else
+   {
+    printf("Not Divisible by 5\n");
+   }
+     return 0;
+ }
