@@ -1,36 +1,37 @@
-// Input : 4
-// Output : 4   3   2   1
+//////////////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 10/05/2025
+/////////////////////////////////////////////
+/* 
+start
+       user kadun ek number ghya ani
+       tya number jitke symbol print kara
+       symbol:- $ and *
+stop      
+*/
 
 #include<stdio.h>
 
-void Display(int iNo)
+void Pattern(int iNo)
 {
     int iCnt = 0;
-    
-    if(iNo < 0)
-    {
-        iNo = -iNo;
-    } 
-    
-    for(iCnt = iNo; iCnt >= 1; iCnt--)
-    {
-        printf("%d\t",iCnt);
-    }
-    printf("\n");
-}
 
+  for(iCnt = 0; iCnt < iNo; iCnt++)
+  {
+    printf("$ * \n");
+
+  }
+}
 int main()
 {
     int iValue = 0;
-
-    printf("Enter frequency : \n");
+    printf("Enter number:");
     scanf("%d",&iValue);
 
-    Display(iValue);
-
+    Pattern(iValue);
+    
     return 0;
 }
-
-// Time Complexity O(N)
-// N is a natural number
-// Where N >= 0 and N <= Inifinity
