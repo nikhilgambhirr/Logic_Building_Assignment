@@ -1,33 +1,23 @@
 #include<stdio.h>
 
-void DisplayFactorsNonFactors(int iNo)
+void Display(int iNo)
 {
     int iCnt = 0;
+ for(iCnt = 1; iCnt<=iNo; iCnt++ )
+ {
+  printf("%d\n",iCnt);
 
-    if(iNo < 0)     // Updator
-    {   iNo = -iNo; }
+ }
 
-    for(iCnt = 1; iCnt < iNo ; iCnt++)
-    {
-        if((iNo % iCnt) == 0)
-        {
-            printf("Factor is %d\n",iCnt);
-        }
-        else
-        {
-            printf("Non Factor is %d\n",iCnt);
-        }
-    }
 }
-
 int main()
+
 {
     int iValue = 0;
 
-    printf("Enter number : \n");
+    printf("Enter number:");
     scanf("%d",&iValue);
 
-    DisplayFactorsNonFactors(iValue);
-
+    Display(iValue);
     return 0;
 }
