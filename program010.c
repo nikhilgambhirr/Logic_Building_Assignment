@@ -1,39 +1,46 @@
-// Input : 4
-// Output : -4  -3  -2  -1  0   1   2   3   4
-
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 9/05/2025
+//
+///////////////////////////////////////////////
 #include<stdio.h>
+#define TRUE 1
+#define FALSE 0
 
-void Display(int iNo)
+typedef int BOOL;
+
+BOOL chkEvent(int iNo)
 {
-   int iCnt = 0;
-
-     if( iNo < 0)
-   {
-     iNo = -iNo;
-   }
-   
-   for( iCnt = -iNo; iCnt <= iNo; iCnt++)   //2n 2 loop kadun eka loop madhe convert kel ahe  program 83 ani 84 same 
-   {
-    printf("%d\t",iCnt);
-   }
-    
-    
-    printf("\n");
-}  
-
+    if(iNo % 2 == 0)
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
 int main()
 {
+    int iValue = 0;
+    BOOL bRet = FALSE;
 
-  int iValue = 0;
+    printf("Enter numer:");
+    scanf("%d",&iValue);
 
-  printf("Enter the Frequency : \n");
-  scanf("%d",&iValue);
+    bRet = chkEvent( iValue);
 
-  Display(iValue);
+      if(bRet == TRUE)
+      {
+        printf(" This is even  Number\n");
+      }
+      else
+      {
+        printf("This is old Number \n");
+      }
 
     return 0;
-
-
-} // time complexity O(n)
-// N is  a natural number
-// Where N>= 0 and N<= Inifinty
+}
