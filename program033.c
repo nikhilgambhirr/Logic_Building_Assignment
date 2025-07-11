@@ -1,29 +1,32 @@
 #include<stdio.h>
 
-int SumDigits(int iNo)
-{
-    int iSum = 0;
-    int iDigit = 0;
-
-    while(iNo != 0)
-    {
-        iDigit = iNo % 10;
-        iSum = iSum + iDigit; 
-        iNo = iNo / 10;
-    }
-    return iSum;
+int EvenFactorial(int iNo)
+{  
+     int iCnt =0;
+     int iFact= 1;
+        if(iNo < 0)
+        {
+            iNo = -iNo;
+        }
+     for(iCnt = iNo; iCnt>=1;iCnt--)
+     {
+             if(iCnt % 2 == 0)
+             {
+                iFact *= iCnt;
+             } 
+     }
+    return iFact;
 }
-
 int main()
 {
-    int iValue = 0, iRet = 0;
+     int iValue = 0, iRet =0;
+     
+     printf("enter number :");
+     scanf("%d",&iValue);
 
-    printf("Enter number : \n");
-    scanf("%d",&iValue);
+     iRet = EvenFactorial(iValue);
+     printf("Even Factorial of number is %d",iRet);
 
-    iRet = SumDigits(iValue);
+     return 0;
 
-    printf("Summation of digits are : %d\n",iRet);
-
-    return 0;
 }
