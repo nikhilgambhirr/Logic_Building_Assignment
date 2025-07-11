@@ -1,56 +1,59 @@
-#include<stdio.h>
-#include<stdlib.h>
+// input 4 4
+/*
+      
+      $ * * *
+      * $ * *
+      * * $ *
+      * * * $   
+      
+       
+   
+ */
+import java.util.*;
 
-int Maximum(int Arr[], int iSize)
+class Layout
 {
-    int iCnt = 0, iMax = 0;
+    public void Display(int iRow,int iCol)
+  {
+       int i = 0, j = 0;
 
-    if((Arr == NULL) || (iSize <= 0))
-    {
-        printf("Invalid input\n");
-        return -1;
+      for(i = 1; i <= iRow; i++)
+       {
+           for(j =1; j <= iCol; j++)
+           {
+             if( i != j)
+             {
+                System.out.print("*\t");
+            
+             }
+             else
+             {
+                System.out.print("$\t");
+             }
+               
+           }
+       System.out.println("\n");
     }
-
-    iMax = Arr[0];
-    
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] > iMax)
-        {
-            iMax = Arr[iCnt];
-        }
-    }
-
-    return iMax;
+  }   
 }
-
-int main()
+class program73
+ {
+     public static void main(String A[])
 {
-    int *iPtr = NULL;
-    int iLength = 0, iCnt = 0, iRet = 0;
+    Scanner sobj = new Scanner(System.in);
+    int iValue1 = 0, iValue2 = 0;
 
-    printf("Enter number of elements : \n");
-    scanf("%d",&iLength);
+    System.out.println("Enter number of rows :");
+    iValue1 = sobj.nextInt();
 
-    iPtr = (int *)malloc(iLength * sizeof(int));
-    if(NULL == iPtr)
-    {
-        printf("Unable to allocate the memory\n");
-        return -1;
-    }
+    System.out.println("Enter number of colum :"); 
+    iValue2 = sobj.nextInt();
 
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        printf("\nEnter the number %d : ",iCnt+1);
-        scanf("%d",&iPtr[iCnt]);
-    }
+    Layout pobj = new Layout();
 
-    iRet = Maximum(iPtr, iLength);
+    pobj.Display(iValue1,iValue2);
 
-    printf("Maximum element is : %d\n",iRet);
-
-    free(iPtr);
-
-    return 0;
 }
+        
+}
+   
