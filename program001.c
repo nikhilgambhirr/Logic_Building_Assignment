@@ -1,17 +1,28 @@
-#include<stdio.h>
+/////////////////////////////////////////////
 // 
-void Display()
-{
-    int iCnt = 0;
-    
-    for(iCnt = 1; iCnt <=4; iCnt++)
-{
-     printf("Hello\n");
-}
-}
-int main()
-{
-    Display();
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 8/05/2025
+//
+/////////////////////////////////////////////////
 
-    return 0;
+#include<stdio.h>
+void Accept(int iNo)
+{
+   int iCnt = 0;
+   for( iCnt = 1; iCnt <= iNo; iCnt++)
+{  
+    printf("10\n");
+     
 }
+
+}
+  int main()
+  {
+     int iValue = 0;
+     iValue = 5;
+
+     Accept(iValue);
+     return 0;
+  }
