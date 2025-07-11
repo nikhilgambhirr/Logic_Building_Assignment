@@ -1,45 +1,56 @@
-// Input : 4    4
+/////////////////////////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : fact + non factors cha difference kada
+//   Author : Nikhil Kailas Gambhir
+//   Date : 10/05/2025
+/////////////////////////////////////////////////////////////////////
 /*
-    *   *   *   *
-    #   #   #   #
-    *   *   *   *
-    #   #   #   #
+Start
+        Accept Number from user
+            ek user kadun number ghya 
+            tyachye factors kada ani
+            tyache no factor ani factor madhala
+            differecnce kada 
+            
+    stop
 */
-
 #include<stdio.h>
 
-void Display(int iRow, int iCol)
+int FactDiff(int iNo)
 {
-    int i = 0, j = 0;
+  int iCnt = 0;
+  int sumFact = 0;
+  int sumNonFact = 0;
 
-    for(i = 1; i<= iRow; i++)
+    for(iCnt = 1; iCnt <iNo; iCnt++)
     {
-        for(j = 1; j <= iCol; j++)
-        {
-            if((i % 2) == 0)
-            {
-                printf("#\t");
-            }
-            else
-            {
-                printf("*\t");
-            }
+        if(iNo % iCnt == 0)
+        { 
+        
+         sumFact +=iCnt;    
+             
         }
-        printf("\n");
+        else
+        {
+            sumNonFact += iCnt;
+        }
     }
+   return sumFact - sumNonFact;       
 }
+
 
 int main()
 {
-    int iValue1 = 0, iValue2 = 0;
+    int iValue =0;
+    int iRet = 0;
 
-    printf("Enter number of rows : \n");
-    scanf("%d",&iValue1);
+    printf("Enter number:");
+    scanf("%d",&iValue);
 
-    printf("Enter number of columns : \n");
-    scanf("%d",&iValue2);
+    iRet = FactDiff(iValue);
 
-    Display(iValue1, iValue2);
-
+    printf("%d\n",iRet);
     return 0;
+
 }
