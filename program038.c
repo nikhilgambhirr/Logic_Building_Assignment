@@ -1,22 +1,25 @@
 #include<stdio.h>
-// itreation
-void Display(int iNo)
+
+int KMtoMeter(int iNo)
 {
-    int iCnt = 0;
+      int iCnt =0;
+      int iKm = 1000;
     
-    for(iCnt = 1; iCnt <=iNo; iCnt++)
-{
-     printf("%d\n",iCnt);
-}
+      if( iNo * iKm )
+      {
+        iCnt = iNo * iKm;
+      }
 }
 int main()
 {
-    int iValue = 0;
+      int iValue = 0, iRet = 0;
 
-  
-    printf(" Entear the frequency :\n");
-    scanf("%d",&iValue);
-    Display(iValue);
+      printf("Enter  distance:");
+      scanf("%d",&iValue);
 
-    return 0;
+      iRet = KMtoMeter(iValue);
+
+      printf("Distance in Meters : %d\n",iRet);
+
+      return 0;
 }
