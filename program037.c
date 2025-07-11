@@ -1,22 +1,26 @@
 #include<stdio.h>
-// iteration
-void Display(int iNo)
+
+double RectArea(float fWidth, float fHeight)
 {
-    int iCnt = 0;
-    
-    for(iCnt = 1; iCnt <=iNo; iCnt++)
-{
-     printf("%d  : Hello\n",iCnt);
-}
+ {
+   return fWidth * fHeight;
+ }
 }
 int main()
 {
-    int iValue = 0;
+    float fValue1 = 0.0, fValue2 = 0.0;
+    double dRet = 0.0;
 
-  
-    printf(" Entear the frequency :\n");
-    scanf("%d",&iValue);
-    Display(iValue);
+    printf("Enter Width");
+    scanf("%f",&fValue1);
+
+    printf("Enter Hight");
+    scanf("%f",&fValue2);
+
+    dRet = RectArea(fValue1,fValue2);
+
+    printf(" Area of rectangle is:%lf\n",dRet);
 
     return 0;
+
 }
