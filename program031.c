@@ -1,25 +1,34 @@
 #include<stdio.h>
+void Dispaly(int iNo)
+{   int iCnt = 0;
+     
+      if( iNo < 0)
+      iNo = -iNo;
 
-void DisplayDigits(int iNo)
-{
-    int iDigit = 0;
-
-    while(iNo != 0)
+   
+       for(iCnt = 0; iCnt < iNo; iCnt++)
     {
-        iDigit = iNo % 10;
-        printf("%d\n",iDigit);
-        iNo = iNo / 10;
+        printf("*\t");
+
     }
+     for(iCnt = 0; iCnt < iNo; iCnt++)
+    {
+        printf("#\t");
+
+    }
+   
+
+   
 }
 
 int main()
 {
-    int iValue = 0;
+      int iValue = 0;
 
-    printf("Enter number : \n");
-    scanf("%d",&iValue);
+      printf("Enter number:");
+      scanf("%d",&iValue);
 
-    DisplayDigits(iValue);
+      Dispaly(iValue);
+      return 0;
 
-    return 0;
 }
