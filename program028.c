@@ -1,46 +1,26 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-bool CheckPrime(int iNo)
+int Factorial(int iNo)
 {
-    int iCnt = 0;
-    bool bFalg = true;
-
-    if(iNo < 0)
+  int iCnt = 0;
+  int iFact = 1; // new varibale multiplication sathi gheava lagto
+    for(iCnt = iNo; iCnt>=1;iCnt--)//
     {
-        iNo = -iNo;
+        iFact= iFact * iCnt;
     }
-
-    for( iCnt = 2; iCnt <= (iNo / 2); iCnt++)
-    {
-        if(( iNo % iCnt) == 0)
-        {
-            bFalg = false;
-            break;
-        }
-    }
-    return bFalg;
+         return iFact;
 }
-
-
 int main()
 {
-    int iValue = 0;
-    bool bRet = false;
-
-    printf("Enter number : \n");
+    int iValue =0;
+    int iRet =0;
+    printf("Enter number:");
     scanf("%d",&iValue);
 
-    bRet = CheckPrime(iValue);
+    iRet = Factorial(iValue);
 
-    if(bRet == true)
-    {
-        printf("%d is prime number\n",iValue);
-    }
-    else
-    {
-        printf("%d is not a prime number\n",iValue);
-    }
+    printf("Factorial of number is %d",iRet);
 
     return 0;
+
 }
