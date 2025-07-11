@@ -1,24 +1,42 @@
-#include<stdio.h>
+/*  input :-5
+   output:-
 
-int main()
-{
-    int Arr[5];
-    int iCnt = 0;
-
-    printf("Enter the elements : \n");
-
-    scanf("%d",&Arr[0]);
-    scanf("%d",&Arr[1]);
-    scanf("%d",&Arr[2]);
-    scanf("%d",&Arr[3]);
-    scanf("%d",&Arr[4]);
+     5 #   4 #  3 #  2 #  1 #
     
-    printf("Elements from the array are : \n");
+    
+ */
+ import java.util.*;
+import java.util.regex.Pattern;
 
-    for(iCnt = 0; iCnt < 5; iCnt++)
+ class Layout
+{
+    public void Display( int iValue)
+ {
+     int iCnt = 0;
+     
+
+    for(iCnt = iValue; iCnt >= 1; iCnt--)
     {
-        printf("%d\n",Arr[iCnt]);
+        System.out.print(iCnt+ "  #   \t");
     }
+    System.out.println();
+ }
 
-    return 0;
+}
+
+ class program52
+{
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue = 0;
+
+     System.out.println("Enter number :");
+     iValue = sobj.nextInt();
+
+     Layout pobj = new Layout();
+
+     pobj.Display(iValue);
+
+    }
 }
