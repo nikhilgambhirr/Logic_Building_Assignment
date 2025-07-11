@@ -1,50 +1,56 @@
-#include<stdio.h>
-#include<stdlib.h>
+// input 4 4
+/*
+   A  B  C   D
+   a  b  c   d
+   A  B  C   D
+   a  b  c   d
+ */
 
-int CountOdd(int Arr[], int iSize)
+import java.util.Scanner;
+
+class Layout
 {
-    int iCnt = 0, iCount = 0;
-
-    for(iCnt = 0; iCnt < iSize; iCnt++)
+    public void Display(int iRow, int iCol)
     {
-        if((Arr[iCnt] % 2) != 0)
+        int i = 0, j = 0;
+        char ch1 = '\0', ch2 = '\0';
+
+        for(i = 1; i <= iRow; i++)
         {
-            iCount++;
+            for(j = 1, ch1 ='a', ch2 ='A'; j <= iCol; j++ ,ch1++,ch2++)
+            {
+                if(i % 2 == 0)
+                {
+                    System.out.print(ch1+"\t");
+                }
+                else
+                {
+                    System.out.print(ch2+"\t");
+                }
+            }
+            System.out.println();
         }
     }
-
-    return iCount;
 }
-
-int main()
+class program62
+ {
+     public static void main(String A[])
 {
-    int iLength = 0, iCnt = 0, iRet = 0;
-    int *ptr = NULL;
+    Scanner sobj = new Scanner(System.in);
+    int iValue1 = 0, iValue2 = 0;
 
-    printf("Enter the number of elements : \n");
-    scanf("%d",&iLength);
+    System.out.println("Enter number of rows :");
+    iValue1 = sobj.nextInt();
 
-    // Step 1 : Allocate the memory
-    ptr = (int *)malloc(iLength * sizeof(int));
-    if(ptr == NULL)
-    {
-        printf("Unable to allocate memory\n");
-        return -1;
-    }
+    System.out.println("Enter number of colum :"); 
+    iValue2 = sobj.nextInt();
 
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        scanf("%d",&ptr[iCnt]);
-    }
+    Layout pobj = new Layout();
 
-    // Step 2 : Use that memory
-    iRet = CountOdd(ptr,iLength);
-    
-    printf("Number of odd elements are : %d\n",iRet);
+     pobj.Display(iValue1, iValue2);
 
-    // Step 3 : Free the memory 
-    free(ptr);
 
-    return 0;
 }
+        
+}
+     
