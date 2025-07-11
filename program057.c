@@ -1,41 +1,48 @@
-#include<stdio.h>
+/*  input :- iRow : 3    icol : 3
 
-void Display(int ptr[],int iSize)    // address of integers  ahe
+   output:- 1  2  3
+            1  2  3 
+            1  2  3
+            1  2  3
+ */
+ import java.util.*;
+
+ class Pattern
 {
-    printf("Element of the array are :\n");
-
-    int iCnt =0;
-
-    for(iCnt = 0; iCnt < iSize; iCnt++) // for loop takala ahe hyat
-    {
-       printf("%d\n",ptr[iCnt]);
+    public void Display( int iRow,int iCol)
+  {
+        int i = 0, j = 0;
         
-    }
-    
-    
-    
+
+        for(i = 1; i <= iRow; i++)    // row ch logic
+        {
+            for(j = 1; j <= iCol; j++)  // coloum ch logic    
+            {
+                System.out.print(j+"\t");  // colum user input deil tas vadat rahil
+            }
+            System.out.println();
+        }
+
+  }
 
 }
 
-int main()
+ class program57
 {
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue1 = 0, iValue2 = 0;
 
-    int Arr[5];
-    int iCnt = 0;
+     System.out.println("Enter the Rows  :");
+     iValue1 = sobj.nextInt();
 
-     printf("Enter the elements : \n");
-     for (iCnt = 0; iCnt < 5; iCnt++)
-     {
-       scanf("%d",&Arr[iCnt]);    
-     }                          
+     System.out.println("Enter the Coloum  :");
+     iValue2 = sobj.nextInt();
 
-     
-   Display(Arr,5); // display (100,5);
-     
+     Pattern pobj = new Pattern();
 
+     pobj.Display(iValue1,iValue2);
 
-    return 0;
-
-    
-
+    }
 }
