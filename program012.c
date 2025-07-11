@@ -1,48 +1,42 @@
-// Input : 4    #
-// Output : #   #   #   #
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 10/05/2025
+//
+///////////////////////////////////////////////
+#include<stdio.h> 
 
-// Input : 5    &
-// Output : &   &   &   &   &
-
-// Input : 3    z
-// Output : z   z   z
-
-#include<stdio.h>
-
-void Display(int iNo, char ch)
+void DisplayFactor(int iNo)
 {
-    int iCnt = 0;
-    
-    if(iNo < 0)
+    int i = 0;
+
+    if(iNo <= 0)
     {
         iNo = -iNo;
-    } 
-    
-    for(iCnt = 1; iCnt <= iNo; iCnt++)     // N
-    {
-        printf("%c\t",ch);
     }
-    printf("\n");
+      for(i = 1; i <iNo; i++)
+    
+    {
+          if(iNo % i == 0 && i % 2 == 0)
+          {  
+             printf("%d ",i);
+             
+          }
+    }
 }
+ int main()
+ {  
+     int iValue = 0;
 
-int main()
-{
-    int iValue = 0;
-    char cValue = '\0';
+     printf("Enter number :\n");
+     scanf("%d",&iValue);
 
-    printf("Enter frequency : \n");
-    scanf("%d",&iValue);
+     DisplayFactor(iValue);
 
-    printf("Enter character : \n");
-    scanf(" %c",&cValue);
+     return 0;
 
-    printf("Accepted character is : %c\n",cValue);
 
-    Display(iValue,cValue);
 
-    return 0;
-}
-
-// Time Complexity O(N)
-// N is a natural number
-// Where N >= 0 and N <= Inifinity
+ }
