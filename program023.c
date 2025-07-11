@@ -1,29 +1,24 @@
 #include<stdio.h>
 
-void DisplayEvenFactors(int iNo)
+void Display(int iNo)
 {
-    int iCnt = 0;
 
-    if(iNo < 0)     // Updator
-    {   iNo = -iNo; }
+  int iCnt = 0;
 
-    for(iCnt = 1; iCnt <= iNo/2 ; iCnt++)
-    {
-        if((iNo % iCnt == 0) && (iCnt % 2 == 0))
-        {
-            printf("%d\n",iCnt);
-        }
-    }
+ for(iCnt = -iNo; iCnt <= iNo; iCnt++ )
+ {
+  printf("%d\n",iCnt);
+ }
+
 }
 
 int main()
 {
     int iValue = 0;
 
-    printf("Enter number : \n");
+    printf("Enter number:");
     scanf("%d",&iValue);
 
-    DisplayEvenFactors(iValue);
-
+    Display(iValue);
     return 0;
 }
