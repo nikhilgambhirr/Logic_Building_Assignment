@@ -1,29 +1,44 @@
-#include<stdio.h>
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 10/05/2025
+//
+///////////////////////////////////////////////
+#include<stdio.h> 
 
-void Display()
+void DisplayEvenFactor(int iNo)
 {
-    printf("*\t");
-    printf("*\t");
-    printf("*\t");
-    
-    printf("\n");
+    int i = 0;
 
-    printf("*\t");
-    printf("*\t");
-    printf("*\t");
+    if(iNo <= 0)
+    {
+        iNo = -iNo;
+    }
+      for(i = 1; i <= iNo /1; i++)
     
-    printf("\n");
-    printf("*\t");
-    printf("*\t");
-    printf("*\t");
-    
-    printf("\n");
+    {
+          if((iNo % i== 0)&& (i % 2 == 0))// even factor sathi logic 
+        
+        
+          {
+
+             printf("%d ",i);
+             
+      
+     }
+   }
 }
+ int main()
+ {  
+     int iValue = 0;
 
-int main()
-{
+     printf("Enter number :\n");
+     scanf("%d",&iValue);
 
-    Display();
+     DisplayEvenFactor(iValue);
 
-    return 0;
-}
+     return 0;
+
+ }
