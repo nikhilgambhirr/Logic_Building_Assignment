@@ -1,42 +1,36 @@
 #include<stdio.h>
 
-#define ERR_INVALID -1
-
-unsigned long Factorial(unsigned int iNo)
+int Count(int iNo)
 {
-    int iCnt = 0;
-    unsigned long iFact = 1;
+    int iDigit = 0;
+    int iCount = 0;
 
-    if(iNo < 0)
+    if( iNo < 0)
     {
-        return ERR_INVALID;
+        iNo = -iNo;
     }
-
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
-    {
-        iFact = iFact * iCnt;
-    }
-
-    return iFact;
+     while (iNo != 0)
+     {
+         iDigit = iNo % 10;
+         if(iDigit < 6)
+         {
+            iCount++;
+         }
+          iNo = iNo / 10;
+     }
+     
+     return iCount;
 }
-
 int main()
 {
-    unsigned int iValue = 0;
-    unsigned long iRet = 0;
-    
-    printf("Enter number : \n");
-    scanf("%u",&iValue);
+    int iValue = 0;
+    int iRet = 0;
 
-    iRet = Factorial(iValue);
-    if(iRet == ERR_INVALID)
-    {
-        printf("Invalid input\n");
-    }
-    else
-    {
-        printf("Factorial is : %lu\n",iRet);
-    }
-    
+    printf("Enter number:\n");
+    scanf("%d",&iValue);
+
+    iRet = Count(iValue);
+    printf("%d\n",iRet);
+
     return 0;
-}
+ }
