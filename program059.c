@@ -1,46 +1,55 @@
-#include<stdio.h>
-#include<stdlib.h>
+/*  input :- iRow : 3    icol : 5
 
-int Summation(int Arr[], int iSize)
+   output :-
+            
+            
+    
+ */
+ import java.util.*;
+
+ class Layout
 {
-    int iCnt = 0, iSum = 0;
+    public void Display( int iRow,int iCol)
+  {
+        int i = 0, j = 0;
+        
 
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        iSum = iSum + Arr[iCnt];
-    }
-    return iSum;
+        for(i = 1; i <= iRow; i++)    
+        {
+            for(j = iCol; j >= 1; j--)  
+            {
+                if((j % 2) == 0) 
+            {
+                System.out.print("*\t");  
+            }
+            else
+            {
+                System.out.print("#\t");  
+            }
+          }
+            System.out.println();
+        }
+
+  }
+
 }
 
-int main()
+ class program59
 {
-    int iLength = 0, iCnt = 0, iRet = 0;
-    int *ptr = NULL;
-
-    printf("Enter the number of elements : \n");
-    scanf("%d",&iLength);
-
-    // Step 1 : Allocate the memory
-    ptr = (int *)malloc(iLength * sizeof(int));
-    if(ptr == NULL)
+    public static void main(String A[]) 
     {
-        printf("Unable to allocate memory\n");
-        return -1;
+     Scanner sobj = new Scanner(System.in);
+     int iValue1 = 0, iValue2 = 0;
+
+     System.out.println("Enter the Rows  :");
+     iValue1 = sobj.nextInt();
+
+     System.out.println("Enter the Coloum  :");
+     iValue2 = sobj.nextInt();
+
+     Layout pobj = new Layout();
+
+     pobj.Display(iValue1,iValue2);
+
     }
-
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        scanf("%d",&ptr[iCnt]);
-    }
-
-    // Step 2 : Use that memory
-    iRet = Summation(ptr,iLength);
-    
-    printf("Summation is : %d\n",iRet);
-
-    // Step 3 : Free the memory 
-    free(ptr);
-
-    return 0;
 }
