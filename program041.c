@@ -1,30 +1,29 @@
 #include<stdio.h>
-
-// Input : 5
-// 1 + 2 + 3 + 4 + 5
-
-int Summation(int iNo)
+void DispalyDigits(int iNo)
 {
-    int iCnt = 0;
+int iDigit = 0;
 
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
-    {
-        printf("%d",iCnt);
-    }
-    return 0;
+ if( iNo < 0 )
+ {
+     iNo = -iNo;
+ }
+ while (iNo != 0)
+ {
+    iDigit = iNo % 10;
+    printf("%d",iDigit);
+      iNo = iNo / 10;
+
+ }
+ 
 }
-
-int main()
-{
+ int main()
+ {
     int iValue = 0;
-    int iRet = 0;
-    
-    printf("Enter number : \n");
+     
+    printf("Enter number");
     scanf("%d",&iValue);
 
-    iRet = Summation(iValue);
-    
-    printf("Summation is : %d \n",iRet);
+    DispalyDigits(iValue);
 
     return 0;
-}
+ }
