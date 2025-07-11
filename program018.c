@@ -1,38 +1,42 @@
-// Input : 4    4
-/*
-    1   1   1   1
-    2   2   2   2
-    3   3   3   3
-    4   4   4   4
-*/
+
+////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : non factors
+//   Author : Nikhil Kailas Gambhir
+//   Date : 10/05/2025
+///////////////////////////////////////////
 
 #include<stdio.h>
 
-void Display(int iRow, int iCol)
+void NonFact(int iNo)
 {
-    int i = 0, j = 0;
+  int iCnt = 0;
+  int First =1;
 
-    for(i = 1; i<= iRow; i++)
+    for(iCnt = 1; iCnt <iNo; iCnt++)
     {
-        for(j = 1; j <= iCol; j++)
-        {
-            printf("%d\t",i);
+        if(iNo % iCnt != 0)
+        { 
+        
+        
+            printf("%d\n", iCnt);
+            
+             
         }
-        printf("\n");
     }
+        
 }
+
 
 int main()
 {
-    int iValue1 = 0, iValue2 = 0;
+    int iValue =0;
 
-    printf("Enter number of rows : \n");
-    scanf("%d",&iValue1);
+    printf("Enter number:");
+    scanf("%d",&iValue);
 
-    printf("Enter number of columns : \n");
-    scanf("%d",&iValue2);
-
-    Display(iValue1, iValue2);
-
+    NonFact(iValue);
     return 0;
+
 }
