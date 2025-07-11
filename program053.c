@@ -1,31 +1,40 @@
-#include<stdio.h>
+/*  input :-5
+   output:-
 
-int main()
+     1*  2*  3*  4*   5* 
+    
+ */
+ import java.util.*;
+
+ class Pattern
 {
-
-    int Arr[5];
-    int iCnt = 0;
-
-     printf("Enter the elements : \n");
-     for (iCnt = 0; iCnt < 5; iCnt++)
-     {
-       scanf("%d",&Arr[iCnt]);  // asl kraych nay  
-     }                          // ha loop cha program ahe hard coted value cha
-
+    public void Display( int iNo)
+ {
+     int iCnt = 0;
      
 
-     printf(" elements form the array are : \n");
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    {
+        System.out.print(iCnt+ "*\t");
+    }
+    System.out.println();
+ }
 
-     for(iCnt= 0; iCnt<5; iCnt++)
-     {
-        printf("%d\n",Arr[iCnt]);
-     }
-       
+}
 
+ class program53
+{
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue = 0;
 
+     System.out.println("Enter number :");
+     iValue = sobj.nextInt();
 
-    return 0;
+     Pattern pobj = new Pattern();
 
-    
+     pobj.Display(iValue);
 
+    }
 }
