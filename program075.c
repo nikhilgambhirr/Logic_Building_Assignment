@@ -1,68 +1,57 @@
- 
-     #include<stdio.h>
-     #include<stdlib.h>
+// input 4 4
+/*  
+   1  2  3  4 
+   1  *  *  4
+   1  *  *  4
+   1  2  3  4
+ */
+import java.util.*;
 
-void MaximumMinimum(int Arr[], int iSize)
+class Layout
 {
-    int iCnt = 0, iMax = 0, iMin = 0;
+    public void Display(int iRow,int iCol)
+  {
+       int i = 0, j = 0;
+      int iNo = 1;
 
-    if((Arr == NULL) || (iSize <= 0))
-    {
-        printf("Invalid input\n");
-        return;
-    }
-// inilization filter chya khali hav
-    iMin = Arr[0];
-    
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] < iMin)
-        {
-            iMin = Arr[iCnt];
-        }
-    }
+      for(i = 1; i <= iRow; i++)
+       {
+           for(j =1,iNo = 1; j <= iCol; j++,iNo++ )
+           {
+             if((j == 1) || (j == iCol) || (i == 1) || (i == iRow))
+             {
+                System.out.print(iNo+" \t");
+                
+             }
+             else
+             {
+                System.out.print("*\t");
 
-    iMax = Arr[0];
-    
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] > iMax)
-        {
-            iMax = Arr[iCnt];
-        }
+             }
+               
+           }
+       System.out.println("\n");
     }
-
-    printf("Maximum element is : %d\n",iMax);
-    printf("Minimum element is : %d\n",iMin);
+  }   
 }
-
-int main()
+class program75
+ {
+     public static void main(String A[])
 {
-    int *iPtr = NULL;
-    int iLength = 0, iCnt = 0;
+    Scanner sobj = new Scanner(System.in);
+    int iValue1 = 0, iValue2 = 0;
 
-    printf("Enter number of elements : \n");
-    scanf("%d",&iLength);
+    System.out.println("Enter number of rows :");
+    iValue1 = sobj.nextInt();
 
-    iPtr = (int *)malloc(iLength * sizeof(int));
-    if(NULL == iPtr)
-    {
-        printf("Unable to allocate the memory\n");
-        return -1;
-    }
+    System.out.println("Enter number of colum :"); 
+    iValue2 = sobj.nextInt();
 
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        printf("\nEnter the number %d : ",iCnt+1);
-        scanf("%d",&iPtr[iCnt]);
-    }
+    Layout pobj = new Layout();
 
-    MaximumMinimum(iPtr, iLength);
+    pobj.Display(iValue1,iValue2);
 
-    free(iPtr);
-
-    return 0 ;
- // miximum number
-
-     //O(2N)
+}
+        
+}
+   
