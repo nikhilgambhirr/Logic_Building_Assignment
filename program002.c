@@ -1,44 +1,28 @@
-/*
-    input : 4
-    utput : * * * *
-   
-
-    start
-          Accept the frequency
-          itrate from 1 to that frequency
-*/
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 8/05/2025
+//
+/////////////////////////////////////////////////
 
 #include<stdio.h>
-
-void Display(int iNo)
+void Accept(int iNo)
 {
    int iCnt = 0;
-
-     if( iNo < 0)
-   {
-     iNo = -iNo;
-   }
-   
-   for( iCnt = 1;iCnt <= iNo; iCnt++)
-   {
-    printf("$\t");
-   }
-     printf("\n");
+   for( iCnt = 1; iCnt <= iNo; iCnt++)
+{  
+    printf("10\n");
+     
 }
 
-int main()
-{
+}
+  int main()
+  {
+     int iValue = 0;
+     iValue = 5;
 
-  int iValue = 0;
-
-  printf("Enter the Frequency : \n");
-  scanf("%d",&iValue);
-
-  Display(iValue);
-
-    return 0;
-
-
-} // time complexity O(n)
-// N is  a natural number
-// Where N>= 0 and N<= Inifinty
+     Accept(iValue);
+     return 0;
+  }
