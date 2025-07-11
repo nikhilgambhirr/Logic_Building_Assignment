@@ -1,65 +1,47 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
+// input  3  4
+ /*
+  output :-    1  2  3  4
+               5  6  7  8
+               9  10  11  12
+  */
 
-bool Search(int Arr[], int iSize)
+import java.util.Scanner;
+
+class Layout
 {
-    int iCnt = 0, iSum = 0;
-
-    for(iCnt = 0; iCnt < iSize; iCnt++)
+    public void Display(int iRow, int iCol)
     {
-        if(Arr[iCnt] == 11)
+        int i = 0, j = 0;
+        int iNo = 1;
+        for(i =1; i <= iRow; i++)
         {
-            break;
+            for(j = 1;j <= iCol; j++,iNo++)
+                {
+                    System.out.print(iNo +"\t");
+                }
+                   System.out.println();
         }
     }
-
-    if(iCnt == iSize)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
 }
-
-int main()
+class program65
+ {
+     public static void main(String A[])
 {
-    int iLength = 0, iCnt = 0;
-    int *ptr = NULL;
-    bool bRet = false;
+    Scanner sobj = new Scanner(System.in);
+    int iValue1 = 0, iValue2 = 0;
 
-    printf("Enter the number of elements : \n");
-    scanf("%d",&iLength);
+    System.out.println("Enter number of rows :");
+    iValue1 = sobj.nextInt();
 
-    // Step 1 : Allocate the memory
-    ptr = (int *)malloc(iLength * sizeof(int));
-    if(ptr == NULL)
-    {
-        printf("Unable to allocate memory\n");
-        return -1;
-    }
+    System.out.println("Enter number of colum :"); 
+    iValue2 = sobj.nextInt();
 
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        scanf("%d",&ptr[iCnt]);
-    }
+    Layout pobj = new Layout();
 
-    // Step 2 : Use that memory
-    bRet = Search(ptr,iLength);
-    if(bRet == true)
-    {
-        printf("11 is present\n");
-    }
-    else
-    {
-        printf("11 is not present\n");
-    }
-    
-    // Step 3 : Free the memory 
-    free(ptr);
+     pobj.Display(iValue1, iValue2);
 
-    return 0;
+
 }
+        
+}
+     
