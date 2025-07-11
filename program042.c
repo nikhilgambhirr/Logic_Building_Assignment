@@ -1,30 +1,50 @@
 #include<stdio.h>
 
-// Input : 5
-// 1 + 2 + 3 + 4 + 5
+#define TRUE 1
+#define FALSE 0
 
-int Summation(int iNo)
+typedef int BOOL;
+
+ BOOL ChkZero(int iNo)
+
 {
-    int iCnt = 0;
+int iDigit = 0;
 
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
+ if( iNo < 0 )
+ {
+     iNo = -iNo;
+ }
+ while (iNo != 0)
+ {
+    iDigit = iNo % 10;
+    if(iDigit == 0);
     {
-        printf("%d",iCnt);
+         return TRUE;
     }
-    return 0;
-}
+      iNo = iNo / 10;
 
-int main()
-{
+ }
+    return FALSE;
+}
+ int main()
+ {
     int iValue = 0;
-    int iRet = 0;
-    
-    printf("Enter number : \n");
-    scanf("%d", &iValue);
+    BOOL bRet = FALSE;
 
-    iRet = Summation  (iValue);
+    printf("Enter number:\n");
+    scanf("%d",&iValue);
+  
+    bRet = ChkZero(iValue);
+
+    if( bRet == TRUE)
+    {
+        printf(" it contains Zero");
+
+    }
+    else{
+        printf("There is no Zero");
+    }
     
-    printf("Summation is : %d\n",iRet);
 
     return 0;
-}
+ }
