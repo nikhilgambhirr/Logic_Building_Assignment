@@ -1,37 +1,35 @@
-// Input : 4
-// Output : $   $   $   $
-
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 8/05/2025
+//
+//////////////////////////////////////////////
 #include<stdio.h>
 
-void Display(int iNo)
+      void Display()
 {
-   int iCnt = 0;
-
-     if( iNo < 0)
-   {
-     iNo = -iNo;
-   }
-   
-   for( iCnt = 1;iCnt <= iNo; iCnt++)
-   {
-    printf("%d\t",iCnt);
-   }
-     printf("\n");
+   // int i = 0;
+    int i = 5;
+         while ( i >= 1)
+         {
+            printf("%d\n",i);
+            i--;  
+         }
 }
+    int main()
+    {
+         Display();
+         return 0;
 
-int main()
-{
-
-  int iValue = 0;
-
-  printf("Enter the Frequency : \n");
-  scanf("%d",&iValue);
-
-  Display(iValue);
-
-    return 0;
-
-
-} // time complexity O(n)
-// N is  a natural number
-// Where N>= 0 and N<= Inifinty
+    }
+       /*
+         output 
+         5
+         4
+         3
+         2
+         1
+       
+       */
