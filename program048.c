@@ -1,26 +1,36 @@
 #include<stdio.h>
 
-void DisplayFactors(int iNo)
+int CountRange(int iNo)
 {
-    int iCnt = 0;
+    int iDigit = 0;
+    int iCount = 0;
 
-    for(iCnt = 1; iCnt < iNo; iCnt++)
+    if( iNo < 0)
     {
-        if((iNo % iCnt) == 0)
-        {
-            printf("%d\n",iCnt);
-        }
+        iNo = -iNo;
     }
+     while (iNo != 0)
+     {
+         iDigit = iNo % 10;
+         if(iDigit > 3 && iDigit < 7)
+         {
+            iCount++;
+         }
+          iNo = iNo / 10;
+     }
+     
+     return iCount;
 }
-
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter number : \n");
+    printf("Enter number:\n");
     scanf("%d",&iValue);
 
-    DisplayFactors(iValue);
+    iRet = CountRange(iValue);
+    printf("%d\n",iRet);
 
     return 0;
-}
+ }
