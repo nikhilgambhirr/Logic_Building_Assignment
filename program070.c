@@ -1,67 +1,49 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
+// input  4  4
+ /*                                 
+  output :-     1   2   3   4  
+                2   3   4   5       
+                3   4   5   6       
+                4   5   6   7       
+                                                 
+                                     
+  */                                  
 
-bool Search(int Arr[], int iSize, int iNo)
+import java.util.Scanner;
+
+class Layout
 {
-    int iCnt = 0;
-    bool bFlag = false;
-
-    if((Arr == NULL) || (iSize <= 0))
+    public void Display(int iRow, int iCol)
     {
-        return false;
-    }
-
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] == iNo)
+        int i = 0, j = 0;
+        for(i =1; i <= iRow; i++)
         {
-            bFlag = true;
-            break;
-        }
+            for(j = 1; j <= iCol; j++)
+         {
+            System.out.print((i + j - 1) + "\t");
+         }
+         System.out.println();
+        }    
     }
-
-    return bFlag;
 }
-
-int main()
+class program70
+ {
+     public static void main(String A[])
 {
-    int *iPtr = NULL;
-    int iLength = 0, iValue = 0, iCnt = 0;
-    bool bRet = false;
+    Scanner sobj = new Scanner(System.in);
+    int iValue1 = 0, iValue2 = 0;
 
-    printf("Enter number of elements : \n");
-    scanf("%d",&iLength);
+    System.out.println("Enter number of rows :");
+    iValue1 = sobj.nextInt();
 
-    iPtr = (int *)malloc(iLength * sizeof(int));
-    if(NULL == iPtr)
-    {
-        printf("Unable to allocate the memory\n");
-        return -1;
-    }
+    System.out.println("Enter number of colum :"); 
+    iValue2 = sobj.nextInt();
 
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        printf("\nEnter the number %d : ",iCnt+1);
-        scanf("%d",&iPtr[iCnt]);
-    }
+    Layout pobj = new Layout();
 
-    printf("\nEnter the value that you want to search : \n");
-    scanf("%d",&iValue);
+     pobj.Display(iValue1, iValue2);
 
-    bRet = Search(iPtr, iLength, iValue);
 
-    if(bRet == true)
-    {
-        printf("%d is present in the array\n",iValue);
-    }
-    else
-    {
-        printf("%d is not present in the array\n",iValue);
-    }
-
-    free(iPtr);
-
-    return 0;
 }
+        
+}
+     
