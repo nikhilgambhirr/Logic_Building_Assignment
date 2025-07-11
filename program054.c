@@ -1,42 +1,39 @@
-#include<stdio.h>
+/*  input :-5
+   output:-
 
-void Display(int *ptr,int iSzie)    // address of integers  ahe
+   #  1 * # 2 * # 3 * # 4 * # 5 * 
+    
+ */
+ import java.util.*;
+
+ class Layout
 {
-    printf("Element of the array are :\n");
-    
-    printf("%d\n",*ptr);
-    ptr++; 
-    printf("%d\n",*ptr);
-    ptr++;
-    printf("%d\n",*ptr);
-    ptr++;
-    printf("%d\n",*ptr);
-    ptr++;
-    printf("%d\n",*ptr);
-    ptr++;
-    
+    public void Display( int iNo)
+ {
+     int iCnt = 0;
+     
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    {
+        System.out.print("# " +iCnt+ " *\t");
+    }
+    System.out.println();
+ }
 
 }
 
-int main()
+ class program54
 {
+    public static void main(String A[]) 
+    {
+     Scanner sobj = new Scanner(System.in);
+     int iValue = 0;
 
-    int Arr[5];
-    int iCnt = 0;
+     System.out.println("Enter number :");
+     iValue = sobj.nextInt();
+     Layout pobj = new Layout();
 
-     printf("Enter the elements : \n");
-     for (iCnt = 0; iCnt < 5; iCnt++)
-     {
-       scanf("%d",&Arr[iCnt]);    
-     }                          
+     pobj.Display(iValue);
 
-     
-   Display(Arr,5); // display (100,5);
-     
-
-
-    return 0;
-
-    
-
+    }
 }
