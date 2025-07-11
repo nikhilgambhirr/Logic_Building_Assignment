@@ -1,45 +1,46 @@
-#include<stdio.h>
-#include<stdlib.h>
+// Input 4  4   
+/*
+    1   1   1   1 
+    2   2   2   2
+    3   3   3   3
+    4   4   4   4
+*/
 
-void Display(int Arr[], int iSize)
+import java.util.*;
+
+class Pattern
 {
-    int iCnt = 0;
-
-    printf("Elements of the array are : \n");
-
-    for(iCnt = 0; iCnt < iSize; iCnt++)
+    public void Display(int iRow, int iCol)
     {
-        printf("%d\n",Arr[iCnt]);
+        int i = 0, j = 0;
+        
+
+        for(i = 1; i <= iRow; i++)
+        {
+            for(j = 1; j <= iCol; j++)
+            {
+                System.out.print(i+"\t");
+            }
+            System.out.println();
+        }
     }
 }
 
-int main()
+class program60
 {
-    int iLength = 0, iCnt = 0;
-    int *ptr = NULL;
-
-    printf("Enter the number of elements : \n");
-    scanf("%d",&iLength);
-
-    // Step 1 : Allocate the memory
-    ptr = (int *)malloc(iLength * sizeof(int));
-    if(ptr == NULL)
+    public static void main(String A[])
     {
-        printf("Unable to allocate memory\n");
-        return -1;
+        Scanner sobj = new Scanner(System.in);
+        int iValue1 = 0, iValue2 = 0;
+
+        System.out.println("Enter number of rows : ");
+        iValue1 = sobj.nextInt();
+
+        System.out.println("Enter number of columns : ");
+        iValue2 = sobj.nextInt();
+
+        Pattern pobj = new Pattern();
+
+        pobj.Display(iValue1, iValue2);
     }
-
-    printf("Enter the elements : \n");
-    for(iCnt = 0; iCnt < iLength; iCnt++)
-    {
-        scanf("%d",&ptr[iCnt]);
-    }
-
-    // Step 2 : Use that memory
-    Display(ptr,iLength);
-    
-    // Step 3 : Free the memory 
-    free(ptr);
-
-    return 0;
 }
