@@ -1,27 +1,22 @@
 #include<stdio.h>
 
-// Iteration 
-
-int Calculate(int iNo)
+double SquareMeter(int iValue)
 {
-    int iCnt = 0, iSum = 0;
-
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
-    {
-        iSum = iSum + iCnt;
-    }        
-    return iSum;
+   return iValue * 0.0929;
 }
+ int main()
+ {
+    int iValue = 0;
+    double dRet = 0.0;
 
-int main()
-{
-    int iValue = 0, iRet = 0;
-
-    printf("Enter the frequency : \n");
+    printf("Enter area in square feet");
     scanf("%d",&iValue);
 
-    iRet = Calculate(iValue);
-    printf("Sumation is %d\n",iRet);
-    
+    dRet = SquareMeter(iValue);
+
+    printf("Area in square meter : %f\n",dRet);
+
     return 0;
-}
+
+
+ }
