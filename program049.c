@@ -1,29 +1,37 @@
 #include<stdio.h>
 
-void DisplayFactors(int iNo)
+int MultiDigits(int iNo)
 {
-    int iCnt = 0;
+    int iDigit = 0;
+    int iCount = 1;
+    
+    if( iNo < 0)
+      {
+        iNo = -iNo;
+      }
+     while( iNo != 0)
+     {
+         iDigit = iNo % 10;
 
-    if(iNo < 0)     // Updator
-    {   iNo = -iNo; }
-
-    for(iCnt = 1; iCnt < iNo; iCnt++)
-    {
-        if((iNo % iCnt) == 0)
+        if(iDigit != 0) // 0 ignoer karnar
         {
-            printf("%d\n",iCnt);
+            iCount *= iDigit;
         }
-    }
+          iNo = iNo / 10;
+     }
+     
+     return iCount;
 }
-
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter number : \n");
+    printf("Enter number:\n");
     scanf("%d",&iValue);
 
-    DisplayFactors(iValue);
+    iRet = MultiDigits(iValue);
+    printf("%d\n",iRet);
 
     return 0;
-}
+ }
