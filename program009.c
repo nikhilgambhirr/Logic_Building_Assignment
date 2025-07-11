@@ -1,40 +1,37 @@
-// Input : 4
-// Output : -4  -3  -2  -1  0   1   2   3   4
-
+/////////////////////////////////////////////
+// 
+//   File name: Program.c   
+//   Desription : 
+//   Author : Nikhil Kailas Gambhir
+//   Date : 9/05/2025
+//
+///////////////////////////////////////////////
 #include<stdio.h>
-
-void Display(int iNo)
+ 
+void Display( int iNo, int iFrequency)
 {
-    int iCnt = 0;
-    
-    if(iNo < 0)
+    int i =0;
+    for(i = 0; i < iFrequency; i++)
     {
-        iNo = -iNo;
-    } 
-    
-    for(iCnt = -iNo; iCnt <= 0; iCnt++)     // N
-    {
-        printf("%d\t",iCnt);
+        printf("%d ", iNo);
+
+       // printf("\n");
+         
     }
-    for(iCnt = 1; iCnt <= iNo; iCnt++)      // N
-    {
-        printf("%d\t",iCnt);
-    }
-    printf("\n");
+     
+
 }
-
-int main()
-{
+ int main()
+ {
     int iValue = 0;
+    int iCount = 0;
 
-    printf("Enter frequency : \n");
-    scanf("%d",&iValue);
+    printf("Enter number:\n");
+    scanf("%d", &iValue);
 
-    Display(iValue);
+    printf("enter frequency:\n");
+    scanf("%d", &iCount);
 
+    Display(iValue , iCount);
     return 0;
-}
-
-// Time Complexity O(2N)
-// N is a natural number
-// Where N >= 0 and N <= Inifinity
+ }
