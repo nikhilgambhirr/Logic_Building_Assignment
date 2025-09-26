@@ -1,87 +1,76 @@
 /*
-    java program to merge two file alternativel into third file..
 
-    input:-
-    output:-
+            Java program to count the number of characters in a file..........
 
-                     Enter First File name :
-                     file1.txt
-                     Enter Second File name :
-                     file2.txt
-                     Enter Destination File name :
-                     file3.txt
-                     Files merged successfully into file3.txt
 
-        
-
+                    Enter file name: program300.java
+                    Total word count = 248
+                    Total number of sentences = 88
+                    Total number of characters = 1948
+                    Number of paragraphs = 16
+                    Total number of whitespaces = 7016
 */
-import java.util.*;
+
 import java.io.*;
-
-class Layout
+import java.util.*;
+class test
 {
-    public void mergeFiles(String Fname1, String Fname2, String Fname3) throws IOException
+    public void testFile(String path) throws IOException
     {
-      BufferedReader fiobj = new BufferedReader(new FileReader(Fname1));
-      BufferedReader fobj = new BufferedReader(new FileReader(Fname2));
+         File file = new File(path);
+        FileInputStream fileStream = new FileInputStream(file);
+        InputStreamReader input = new InputStreamReader(fileStream);
+        BufferedReader reader = new BufferedReader(input);
 
-      BufferedWriter ftobj = new BufferedWriter(new FileWriter(Fname3));
+         String line;
 
+        // Initializing counters
+        int countWord = 0;
+        int sentenceCount = 0;
+        int characterCount = 0;
+        int paragraphCount = 1;  // assume at least 1 paragraph
+        int whitespaceCount = 0;
 
-      String str1, str2;
-
-      while (true) 
-      {
-         str1 = fiobj.readLine();
-         
-         if(str1 != null)
-         {
-            ftobj.write(str1);
-            ftobj.newLine();
-         }
-         str2 = fobj.readLine();
-         if(str2 != null)
-         {
-            ftobj.write(str2);
-            ftobj.newLine();
-         }
-         if(str1 == null && str2 == null)
-         {
-            break;
-         }
-      }
-      fiobj.close();
-      fobj.close();
-      ftobj.close();
-
-      System.out.println("Files merged successfully into " + Fname3);
-
-    }  
-}
-class program300
-{
-    public static void main(String A[])
-    {
-      try
+        while ((line = reader.readLine()) != null) 
         {
-           Scanner sobj = new Scanner(System.in);
-           
-            System.out.println("Enter First File name : ");
-            String fname1 = sobj.nextLine();
+            if (line.equals("")) 
+            {
+                paragraphCount++;
+            } else 
+            {
+                characterCount += line.length();
 
+                // Splitting line into words
+                String[] words = line.split("\\s+");
+                countWord += words.length;
+                whitespaceCount += countWord - 1;
 
-            System.out.println("Enter Second File name : ");
-            String fname2 = sobj.nextLine();
-
-            System.out.println("Enter Destination File name : ");
-            String fname3 = sobj.nextLine();
-
-            Layout lobj = new Layout();
-            lobj.mergeFiles(fname1, fname2, fname3);
+                // Splitting line into sentences
+                String[] sentenceList = line.split("[!?.:]+");
+                sentenceCount += sentenceList.length;
+            }
         }
-        catch(Exception eobj)
-        {
-            System.out.println("Error : " + eobj);
-        }
+
+        System.out.println("Total word count = " + countWord);
+        System.out.println("Total number of sentences = " + sentenceCount);
+        System.out.println("Total number of characters = " + characterCount);
+        System.out.println("Number of paragraphs = " + paragraphCount);
+        System.out.println("Total number of whitespaces = " + whitespaceCount);
+
+        reader.close();
+
     }
+}
+ class program300
+ {
+    public static void main(String[] args) throws IOException {
+
+        Scanner sobj = new Scanner(System.in);
+        System.out.print("Enter file name: ");
+        String path = sobj.nextLine();  
+        sobj.close();
+
+        test obj = new test();
+        obj.testFile(path);
+    }    
 }
